@@ -1,0 +1,173 @@
+public/
+  css/
+    login.css
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hijau: #12b368;
+    --hijau-gelap: #0e8a50;
+    --hijau-tua: #1c4a35;
+    --putih: #ffffff;
+    --teks-gelap: #1a1a1a;
+    --teks-abu: #555;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1c4a35 0%, #12b368 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-card {
+    background: var(--putih);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+/* HEADER CARD */
+.auth-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.auth-header img {
+    margin-bottom: 10px;
+}
+
+.auth-header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--hijau-tua);
+    margin-bottom: 4px;
+}
+
+.auth-header p {
+    font-size: 0.88rem;
+    color: var(--teks-abu);
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.alert-success {
+    background: #d4f1e4;
+    color: #0b7a44;
+    border: 1px solid #a8dfc4;
+}
+
+.alert-error {
+    background: #fde8e8;
+    color: #c0392b;
+    border: 1px solid #f5bcbc;
+}
+
+/* TAB LOGIN / REGISTER */
+.tab-group {
+    display: flex;
+    background: #f0f4f1;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 4px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--teks-abu);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.tab-btn.active {
+    background: var(--hijau);
+    color: var(--putih);
+    box-shadow: 0 2px 8px rgba(18,179,104,0.3);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--teks-gelap);
+}
+
+.form-group input {
+    padding: 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--teks-gelap);
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--hijau);
+    box-shadow: 0 0 0 3px rgba(18,179,104,0.15);
+    background: var(--putih);
+}
+
+/* TOMBOL SUBMIT */
+.btn-auth {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--hijau), var(--hijau-tua));
+    color: var(--putih);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    margin-top: 4px;
+}
+
+.btn-auth:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+.btn-auth:active {
+    transform: translateY(0);
+}

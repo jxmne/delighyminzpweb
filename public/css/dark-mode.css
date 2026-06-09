@@ -1,0 +1,107 @@
+/* @tailwind base!important;
+@tailwind components!important;
+@tailwind utilities!important; */
+
+/* ══ DARK MODE ══ */
+html.dark body {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+html.dark header {
+    background: linear-gradient(to bottom, #064e35, #0d3d28)!important;
+}
+
+html.dark nav {
+    background-color: #1f2937 !important;
+    border-bottom-color: rgba(18, 179, 104, 0.3)!important;
+}
+
+html.dark nav ul li a {
+    color: #d1d5db!important;
+}
+
+html.dark nav ul li a:hover {
+    color: #6ee7b7!important;
+    background: rgba(18, 179, 104, 0.1)!important;
+}
+
+html.dark main {
+    background-color: #111827 !important;
+}
+
+html.dark footer {
+    background-color: #0d0d0d!important;
+}
+
+html.dark .card-menu,
+html.dark .order-card,
+html.dark .aktivitas-card,
+html.dark .history-card {
+    background: #1f2937!important;
+    border-color: #374151!important;
+    color: #e5e7eb!important;
+}
+
+html.dark .card-menu h4,
+html.dark .order-info h4,
+html.dark .aktivitas-info h4 {
+    color: #f9fafb!important;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+    background: #374151!important;
+    color: #e5e7eb!important;
+    border-color: #4b5563!important;
+}
+
+html.dark input::placeholder {
+    color: #9ca3af!important;
+}
+
+html.dark table {
+    background: #1f2937!important;
+    color: #e5e7eb!important;
+}
+
+html.dark tr:nth-child(even) {
+    background-color: #111827!important;
+}
+
+html.dark td, 
+html.dark th {
+    border-bottom-color: #374151!important;
+}
+
+html.dark dialog {
+    background: #1f2937!important;
+    color: #e5e7eb!important;
+}
+
+html.dark #sidebar-filter,
+html.dark .aktivitas-sidebar {
+    background-color: #1f2937!important;
+    color: #e5e7eb!important;
+}
+
+html.dark .alert-success {
+    background: #064e35!important;
+    color: #6ee7b7!important;
+}
+
+html.dark .alert-error {
+    background: #7f1a1a!important;
+    color: #fca5a5!important;
+}
+
+html.dark button.btn-pesan {
+    background: #12b368!important;
+    color: white!important;
+}
+
+html.dark .badge-kategori {
+    background: #374151!important;
+    color: #e5e7eb!important;
+}
