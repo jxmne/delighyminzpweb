@@ -13,26 +13,22 @@ Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menu/search', [MenuController::class, 'search'])->name('menu.search');
 
-// Redirect create & edit ke halaman menu dengan parameter modal
-Route::get('/menu/create', function () {
-    return redirect()->route('menu', ['modal' => 'tambah']);
-})->middleware('auth')->name('menu.create');
-
-Route::get('/menu/{id}/edit', function ($id) {
-    return redirect()->route('menu', ['modal' => 'edit', 'id' => $id]);
-})->middleware('auth')->name('menu.edit');
+// Redirect menggunakan metode bawaan Laravel Fluent (Aman dari Eror Cache)
+Route::redirect('/menu/create', '/menu?modal=tambah')->middleware('auth')->name('menu.create');
+Route::get('/menu/{id}/edit', [MenuController::class, 'index'])->middleware('auth')->name('menu.edit');
 
 // 2. Route yang butuh Login (Auth)
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    
+    // Menggunakan view langsung tanpa fungsi penutup (Aman dari Eror Cache)
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/beranda', [BerandaController::class, 'index'])->middleware(['verified'])->name('beranda');
+    // Route beranda duplikat di bawah ini dinonaktifkan agar tidak bentrok dengan yang di atas
+    // Route::get('/beranda', [BerandaController::class, 'index'])->middleware(['verified'])->name('beranda_auth');
 
     Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan');
     Route::post('/pesanan/tambah/{id}', [PesananController::class, 'tambahKeKeranjang'])->name('pesanan.tambah');
@@ -43,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/aktivitas', [AktivitasController::class, 'index'])->name('aktivitas');
 
-    // Hanya store, update, destroy (create & edit sudah di-override di atas)
+    // Hanya store, update, destroy
     Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
     Route::put('/menu/{menu}', [MenuController::class, 'update'])->name('menu.update');
     Route::patch('/menu/{menu}', [MenuController::class, 'update']);
