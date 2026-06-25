@@ -265,7 +265,7 @@ public/
 
         .search-form input {
             flex: 1;
-            padding: 12px;
+            padding: 100px;
             border: 2px solid #ddd;
             border-radius: 8px;
             outline: none;
